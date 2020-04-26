@@ -86,7 +86,7 @@
         <div class="buttons">
           <% if user_signed_in? %>
             <%= link_to edit_user_registration_path(current_user) , class: "button is-primary" do %>
-              <i class="fa fa-pencil"> <%= current_user.email %>'s profile</i>  
+              <i class="fa fa-pencil"> Edit profile</i>  
             <% end %>
             <%= link_to destroy_user_session_path , method: :delete, class: "button is-primary" do %>
               <i class="fa fa-user"> Log out</i>  
