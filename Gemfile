@@ -48,7 +48,30 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Provides a better error page for Rails and other Rack apps
+  gem 'better_errors', '~> 2.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# MY GEMS
+
+# Hirb provides a mini view framework for console applications 
+gem 'hirb', '~> 0.7.3'
+# A modern CSS framework based on Flexbox
+gem 'bulma-rails', '~> 0.8.0'
+# Forms made easy!
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+# Rails view helper for adding gravatars into your Rails application.
+gem 'gravatar_image_tag', '~> 1.2'
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.7', '>= 4.7.1'
+#Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+
+gem 'carrierwave', '~> 2.1'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+gem 'impressionist', '~> 2.0'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'acts_as_votable', '~> 0.12.1'
