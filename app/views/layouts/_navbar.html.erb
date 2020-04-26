@@ -13,6 +13,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
+        <%= link_to "Shots", shots_path, class: "navbar-item"  %>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
@@ -86,17 +87,17 @@
         <div class="buttons">
           <% if user_signed_in? %>
             <%= link_to edit_user_registration_path(current_user) , class: "button is-primary" do %>
-              <i class="fa fa-pencil"> Edit profile</i>  
+              <i class="fa fa-pencil"> <%= current_user.name %>'s profile</i>  
             <% end %>
             <%= link_to destroy_user_session_path , method: :delete, class: "button is-primary" do %>
               <i class="fa fa-user"> Log out</i>  
             <% end %>
           <% else %>
-            <%= link_to new_user_registration_path , class: "button is-danger" do %>
-              <i class="fa fa-register"> Sign Up</i>  
-            <% end %>
             <%= link_to new_user_session_path , class: "button is-light" do %>
               <i class="fa fa-user"> Log in</i>  
+            <% end %>
+            <%= link_to new_user_registration_path , class: "button is-primary" do %>
+              <i class="fa fa-register"> Sign Up</i>  
             <% end %>
           <% end %>
         </div>
