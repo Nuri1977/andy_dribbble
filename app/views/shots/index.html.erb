@@ -16,7 +16,7 @@
       <tr>
         <td><%= shot.title %></td>
         <td><%= shot.description %></td>
-        <td><%= shot.user %></td>
+        <td><%= shot.user.name %></td>
         <td><%= link_to 'Show', shot %></td>
         <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
         <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,5 +26,3 @@
 </table>
 
 <br>
-
-
