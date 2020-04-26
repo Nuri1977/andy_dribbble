@@ -10,8 +10,9 @@
   </head>
 
   <body>
+    
+    <%= render 'layouts/navbar' %><div class="fixed-nav"></div>
     <%= render 'layouts/flash_messages', class: "mb-0" %>
-    <%= render 'layouts/navbar' %>
     <div class="container">
       <%= yield %>
     </div>
