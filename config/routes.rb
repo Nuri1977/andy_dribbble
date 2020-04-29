@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :shots
+
+
+  resources :shots do
+    resources :comments
+  end
+
   devise_for :users
   root 'shots#index'
 

@@ -1,0 +1,29 @@
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64 user-thumb">
+      <%= gravatar_image_tag(comment.user.email.gsub('spam', 'mdeering'), alt: comment.user.name, gravatar: { size: 48 }); %>
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong><%= comment.user.name %></strong>
+        <br>
+        <%= comment.response %>
+      </p>
+    </div>
+    <% if(user_signed_in? && (current_user.id == comment.user_id)) %>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <%= link_to 'Delete', [comment.shot, comment], method: :delete, class: 'button is-danger level-item' %>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+    <% end %>
+  </div>
+</article>
