@@ -67,7 +67,7 @@
       <div class="panel-block likes data">
         <%= link_to @shot, class:"level-item" do %>
           <span class='icon'><i class="fa fa-comment"></i></span>
-          25 comments
+          <%= pluralize(@shot.comments.count, "Comment") %>
         <% end %>
       </div>
     </div>

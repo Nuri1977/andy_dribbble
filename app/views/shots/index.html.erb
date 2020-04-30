@@ -1,7 +1,7 @@
 <div class="columns is-multiline ">
   
   <% @shots.each do |shot| %>
-    <div class="column is-4-desktop is-6-tablet pb-1">
+    <div class="column is-3-desktop is-6-tablet pb-1">
       <%= link_to shot do %>
         <div class="card nuri-card ">
           <div class="card-image ">
@@ -24,7 +24,7 @@
               <% end %>
               <%= link_to shot, class:"level-item" do %>
                 <span class='icon'><i class="fa fa-comment"></i></span>
-                15
+                <%= shot.comments.count %>
               <% end %>
               <%= link_to shot, class:"level-item" do %>
                 <span class='icon'><i class="fa fa-heart"></i></span>
