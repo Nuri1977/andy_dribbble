@@ -18,17 +18,34 @@
             </div>
 
             <div class="level-right">
+            
               <%= link_to shot, class:"level-item" do %>
                 <span class='icon'><i class="fa fa-eye"></i></span>
                 <%= shot.impressionist_count %>
               <% end %>
+
               <%= link_to shot, class:"level-item" do %>
                 <span class='icon'><i class="fa fa-comment"></i></span>
                 <%= shot.comments.count %>
-              <% end %>
-              <%= link_to shot, class:"level-item" do %>
-                <span class='icon'><i class="fa fa-heart"></i></span>
-                8
+              <% end %> 
+
+              <% if user_signed_in? %>
+                <% if current_user.liked? shot %>
+                  <%= link_to unlike_shot_path(shot), method: :put, class:"unlike_shot level-item" do %>
+                    <span class='icon'><i class="fa fa-heart has-text-primary"></i></span>
+                    <%= shot.get_likes.size %>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_shot_path(shot), method: :put, class:"like_shot level-item" do %>
+                    <span class='icon'><i class="fa fa-heart"></i></span>
+                    <%= shot.get_likes.size %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to like_shot_path(shot), method: :put, class:"like_shot level-item" do %>
+                  <span class='icon'><i class="fa fa-heart"></i></span>
+                  <%= shot.get_likes.size %>
+                <% end %>
               <% end %>
 
             </div>

@@ -52,24 +52,42 @@
   </div>
   <div class="column is-3 is-offset-1">
     <div class="nav panel show-shot-analytics">
+
       <div class="panel-block views data">
         <%= link_to @shot, class:"level-item" do %>
           <span class='icon'><i class="fa fa-eye"></i></span>
           <%= pluralize(@shot.impressionist_count,"View") %>
         <% end %>
       </div>
+
       <div class="panel-block likes data">
-        <%= link_to @shot, class:"level-item" do %>
-          <span class='icon'><i class="fa fa-heart"></i></span>
-          124 likes
+        <% if user_signed_in? %>
+          <% if current_user.liked? @shot %>
+            <%= link_to unlike_shot_path(@shot), method: :put, class:"unlike_shot level-item" do %>
+              <span class='icon'><i class="fa fa-heart has-text-primary"></i></span>
+              <%= pluralize(@shot.get_likes.size, "Like") %>
+            <% end %>
+          <% else %>
+            <%= link_to like_shot_path(@shot), method: :put, class:"like_shot level-item" do %>
+              <span class='icon'><i class="fa fa-heart"></i></span>
+              <%= pluralize(@shot.get_likes.size, "Like") %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to like_shot_path(@shot), method: :put, class:"like_shot level-item" do %>
+            <span class='icon'><i class="fa fa-heart"></i></span>
+            <%= pluralize(@shot.get_likes.size, "Like") %>
+          <% end %>
         <% end %>
       </div>
+
       <div class="panel-block likes data">
         <%= link_to @shot, class:"level-item" do %>
           <span class='icon'><i class="fa fa-comment"></i></span>
           <%= pluralize(@shot.comments.count, "Comment") %>
         <% end %>
       </div>
+
     </div>
   </div>
 </div>
