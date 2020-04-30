@@ -72,6 +72,6 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
-gem 'impressionist', '~> 2.0'
+gem 'impressionist', '~>1.6.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'acts_as_votable', '~> 0.12.1'

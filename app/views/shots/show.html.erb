@@ -55,7 +55,7 @@
       <div class="panel-block views data">
         <%= link_to @shot, class:"level-item" do %>
           <span class='icon'><i class="fa fa-eye"></i></span>
-          34 views
+          <%= pluralize(@shot.impressionist_count,"View") %>
         <% end %>
       </div>
       <div class="panel-block likes data">
