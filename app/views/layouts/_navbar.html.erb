@@ -91,20 +91,20 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if user_signed_in? %>
-            <%= link_to new_shot_path , class: "button is-primary is-outlined is-rounded" do %>
+            <%= link_to new_shot_path , class: "button is-primary is-outlined" do %>
               <i class="fa fa-image"> New shot</i>  
             <% end %>
-            <%= link_to edit_user_registration_path(current_user) , class: "button is-primary is-outlined is-rounded" do %>
+            <%= link_to edit_user_registration_path(current_user) , class: "button is-primary is-outlined" do %>
               <i class="fa fa-edit"> <%= current_user.name %>'s profile</i>  
             <% end %>
-            <%= link_to destroy_user_session_path , method: :delete, class: "button is-primary is-rounded" do %>
+            <%= link_to destroy_user_session_path , method: :delete, class: "button is-primary" do %>
               <i class="fa fa-user"> Log out</i>  
             <% end %>
           <% else %>
-            <%= link_to new_user_session_path , class: "button is-primary is-outlined is-rounded" do %>
+            <%= link_to new_user_session_path , class: "button is-primary is-outlined" do %>
               <i class="fa fa-user"> Log in</i>  
             <% end %>
-            <%= link_to new_user_registration_path , class: "button is-primary is-rounded" do %>
+            <%= link_to new_user_registration_path , class: "button is-primary" do %>
               <i class="fa fa-user-plus"> Sign Up</i>  
             <% end %>
           <% end %>

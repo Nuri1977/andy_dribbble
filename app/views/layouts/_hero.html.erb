@@ -1,0 +1,25 @@
+<% if !user_signed_in? %>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+
+        <div class="columns ">
+          <div class="column is-7">
+            <h1 class="title is-size-1">
+              Discover the world’s top designers & creatives
+            </h1>
+            <h2 class="subtitle">
+              Dribbble is the leading destination to find & showcase creative work and 
+              home to the world's best design professionals.
+            </h2>
+            <%= link_to "Sign up", new_user_registration_path , class: "button is-primary" %>
+          </div>
+          <div class="columns is-5">
+              <%= image_tag("Presentation1.jpg", :alt => "Presentation1 feed") %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<% end %>

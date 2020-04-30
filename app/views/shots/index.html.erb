@@ -1,3 +1,5 @@
+<%= render 'layouts/hero' %>
+
 <div class="columns is-multiline ">
   
   <% @shots.each do |shot| %>
@@ -18,7 +20,7 @@
             </div>
 
             <div class="level-right">
-            
+
               <%= link_to shot, class:"level-item" do %>
                 <span class='icon'><i class="fa fa-eye"></i></span>
                 <%= shot.impressionist_count %>
